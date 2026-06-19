@@ -1,47 +1,73 @@
 import React, { useState } from "react";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="fixed top-0 bg-transparent backdrop-blur-sm w-full h-24 md:h-30 lg:h-40 z-50 mb-5">
-      <div className="px-2 w-full sm:px-3 md:px-4 lg:px-5 h-full">
-        <nav className="w-full h-full flex justify-between px-1 md:px-4 lg:px-15 items-center">
-          <div className="flex space-x-1 justify-center items-center cursor-pointer">
-            <img src="/logo.png" alt="LOGO" className="h-20 w-20 md:h-25 md:w-25" />
-            <span className="text-2xl md:text-3xl font-medium md:font-bold">
-              <span className="text-red-500">Om</span>
-              <span className="text-green-600">Dhakal</span>
-            </span>
-          </div>
-          {isOpen && ( <div className="flex z-20 flex-col items-center py-2 space-y-3 md:hidden">
-    <a href="#" className="text-2xl text-orange-400 hover:text-green-300 hover:font-bold">Home</a>
-    <a href="#" className="text-2xl text-orange-400 hover:text-green-300 hover:font-bold">About</a>
-  </div>)}
+    <>
+      <header className="fixed top-0 left-0 w-full h-16 md:h-20 backdrop-blur-md bg-white/5 z-50">
+        <nav className="max-w-7xl mx-auto h-full flex items-center justify-between px-4 md:px-8">
           
+          {/* Logo */}
+          <div className="flex items-center gap-2 cursor-pointer">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-12 h-12 md:w-16 md:h-16"
+            />
+
+            <h1 className="text-xl md:text-3xl font-bold">
+              <span className="text-red-500">Om</span>
+              <span className="text-green-500">Dhakal</span>
+            </h1>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-8">
             <a
               href="#"
-              className=" hidden md:block text-2xl text-orange-400 hover:text-green-300 hover:font-bold"
+              className="text-orange-400 hover:text-green-300 transition"
             >
               Home
             </a>
+
             <a
               href="#"
-              className=" hidden md:block text-2xl text-orange-400 hover:text-green-300 hover:font-bold"
+              className="text-orange-400 hover:text-green-300 transition"
             >
               About
             </a>
-        
-          <div className=" md:hidden justify-between items-center flex ">
-            <button
-              onClick={() => setIsOpen((prev) => !prev)}
-              className="text-2xl text-orange-400 hover:text-green-300 hover:font-bold md:hidden"
-            >
-              Menu
-            </button>
           </div>
+
+          {/* Mobile Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-orange-400"
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
         </nav>
-       
-      </div>
-    </div>
+      </header>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="fixed top-16 left-0 w-full bg-black/40 backdrop-blur-md flex flex-col items-center gap-4 py-6 md:hidden z-40">
+          <a
+            href="#"
+            className="text-orange-400 hover:text-green-300 text-xl"
+          >
+            Home
+          </a>
+
+          <a
+            href="#"
+            className="text-orange-400 hover:text-green-300 text-xl"
+          >
+            About
+          </a>
+        </div>
+      )}
+    </>
   );
 };
 
