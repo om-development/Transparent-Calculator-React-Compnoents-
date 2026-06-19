@@ -87,7 +87,7 @@ const Calculator = () => {
                 .
               </button>
 
-              <button onClick={()=>setDisplay(eval(display))} className="equalbtn border rounded-xl text-2xl p-3">
+              <button onClick={()=>setDisplay(eval(string(display)))} className="equalbtn border rounded-xl text-2xl p-3">
                 =
               </button>
             </div>
