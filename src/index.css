@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+html{
+  margin: 0;
+  padding: 0;
+  background-image: url(/bg4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+}
+body{
+  position: relative;
+}
