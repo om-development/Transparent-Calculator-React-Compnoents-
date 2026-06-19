@@ -1,6 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-html{
+html {
   margin: 0;
   padding: 0;
   background-image: url(/bg4.jpg);
@@ -10,6 +10,6 @@ html{
   min-height: 100vh;
   font-family: "Josefin Sans", sans-serif;
 }
-body{
+body {
   position: relative;
 }

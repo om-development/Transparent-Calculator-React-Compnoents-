@@ -4,7 +4,8 @@ const Calculator = () => {
   function clr(str) {
   return str.slice(0, -1);
 }
-
+  //yes
+  
   return (
     <div className="mt-20 md:mt-23 lg:mt-25 min-h-screen flex justify-center items-center z-30">
       <div className="frame w-150 h-220 rounded-3xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-xl">
